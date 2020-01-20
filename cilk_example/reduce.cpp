@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <cilk/cilk.h>
 #include <cilk/cilk_api.h>
+#include "get_time.h"
 using namespace std;
 
 int reduce(int* A, int n) {
@@ -14,7 +15,7 @@ int reduce(int* A, int n) {
 	return L+R;
 }
 
-int main() {
+int main(int argc, char* argv[]) {
 	if (argc != 2) {
 		cout << "Usage: ./reduce [num_elements]" << endl;
 		return 0;
